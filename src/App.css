@@ -1,0 +1,89 @@
+body {
+  background-color: #f2f2f2c7;
+  margin: 0;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.App {
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 40%;
+}
+
+label {
+  flex: 1;
+  margin-right: 10px;
+}
+
+input {
+  flex: 2;
+  padding: 8px;
+  border: 2px solid #218ef3;
+  border-radius: 8px;
+}
+input:focus {
+  border: 2px solid #218ef3 !important;
+  background-color: rgb(247, 244, 244);
+}
+
+
+
+button {
+  background-color: #f36f21;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 14px;
+}
+
+button:hover {
+  background-color: #f36f21;
+  border-radius: 14px;
+}
+
+.recommendation {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #003a61;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: 50%;
+}
+
+h2 {
+  color: #f39c12;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Add a simple media query for responsiveness */
+@media (max-width: 600px) {
+  .input-container {
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
