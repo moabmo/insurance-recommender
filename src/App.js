@@ -62,26 +62,38 @@ const App = () => {
 
   const handleRecommendation = () => {
     if (age && income) {
-      const recommendedProduct = insuranceProducts.find(product => {
-        return product.criteria.every(criteria => {
-          const { key, min, max } = criteria;
-          const value = key === 'age' ? parseInt(age) : parseInt(income);
-
-          const minCriteria = !min || value >= min;
-          const maxCriteria = !max || value <= max;
-
-          return minCriteria && maxCriteria;
+      const ageInt = parseInt(age);
+      const incomeInt = parseInt(income);
+  
+      const isValidAge = ageInt >= 18 && ageInt <= 99;
+      const isValidIncome = incomeInt >= 0;
+  
+      if (isValidAge && isValidIncome) {
+        const recommendedProduct = insuranceProducts.find(product => {
+          return product.criteria.every(criteria => {
+            const { key, min, max } = criteria;
+            const value = key === 'age' ? ageInt : incomeInt;
+  
+            const minCriteria = !min || value >= min;
+            const maxCriteria = !max || value <= max;
+  
+            return minCriteria && maxCriteria;
+          });
         });
-      });
-
-      if (recommendedProduct) {
-        setSelectedProduct(recommendedProduct);
+  
+        if (recommendedProduct) {
+          setSelectedProduct(recommendedProduct);
+        } else {
+          // Default product definition.. also displays when no product is selected
+          setSelectedProduct(insuranceProducts[0]);
+        }
       } else {
-        // Default product definition.. also displays when no product is selected
-        setSelectedProduct(insuranceProducts[0]);
+        // Handle invalid age or income inputs
+        alert("Please enter valid age (Age must be between  18 and 99).");
       }
     }
   };
+  
 
   return (
     <div className="App">
@@ -95,6 +107,7 @@ const App = () => {
             value={age}
             onChange={(e) => setAge(e.target.value)}
             min="18" // Set the minimum value to 18
+            max="99"
           />
         </div>
         <div>
@@ -104,6 +117,7 @@ const App = () => {
             id="income"
             value={income}
             onChange={(e) => setIncome(e.target.value)}
+            min="0"
           />
         </div>
       </div>
