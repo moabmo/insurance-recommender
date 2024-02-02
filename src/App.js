@@ -100,7 +100,7 @@ const App = () => {
       <h1>Life Insurance Recommender</h1>
       <div className="input-container">
         <div>
-          <label htmlFor="age">Age:</label>
+          <label htmlFor="age">Age Next Birthday:</label>
           <input
             type="number"
             id="age"
