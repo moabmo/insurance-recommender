@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Comic Sans MS', cursive;
 }
 
 .App {
@@ -28,13 +29,12 @@ input {
   padding: 8px;
   border: 2px solid #218ef3;
   border-radius: 8px;
+  font-family: 'Comic Sans MS', cursive;
 }
 input:focus {
   border: 2px solid #218ef3 !important;
   background-color: rgb(247, 244, 244);
 }
-
-
 
 button {
   background-color: #f36f21;
@@ -45,6 +45,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   border-radius: 14px;
+  font-family: 'Comic Sans MS', cursive;
 }
 
 button:hover {
@@ -61,6 +62,7 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: auto;
   width: 50%;
+  font-family: 'Comic Sans MS', cursive;
 }
 
 h2 {

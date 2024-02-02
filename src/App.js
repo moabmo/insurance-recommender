@@ -122,12 +122,12 @@ const App = () => {
           </ul>
           <h3>Quote:</h3>
           <p>
-            Monthly Premium: {selectedProduct.currency} {selectedProduct.monthlyPremium.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            <b>Monthly Premium:</b> {selectedProduct.currency} {selectedProduct.monthlyPremium.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           </p>
           <p>
-            Sum Assured: {selectedProduct.currency} {selectedProduct.sumAssured.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          <b>Sum Assured:</b> {selectedProduct.currency} {selectedProduct.sumAssured.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           </p>
-          <p>Term: {selectedProduct.term === 'Lifetime' ? 'Lifetime' : `${selectedProduct.term} years`}</p>
+          <p><b>Term:</b> {selectedProduct.term === 'Lifetime' ? 'Lifetime' : `${selectedProduct.term} years`}</p>
         </div>
       )}
     </div>
